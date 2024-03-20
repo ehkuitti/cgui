@@ -1,73 +1,75 @@
-import logo from './dog.png';
-import './App.css';
-import TextField from '@mui/material/TextField';
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import React, { useState } from 'react';
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel, Grid } from '@mui/material';
+import './style.css';
 
+const PetGreeting = () => {
+  const [petName, setPetName] = useState('');
+  const [animalType, setAnimalType] = useState('');
+  const [message, setMessage] = useState('');
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-
-function App() {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleButtonClick = () => {
+    if (petName && animalType) {
+      let greeting = '';
+      switch (animalType) {
+        case 'dog':
+          greeting = `Hau hau, ${petName}! Olet niin hyvä koira.`;
+          break;
+        case 'cat':
+          greeting = `Miau miau, ${petName}! Olet täydellinen kissa.`;
+          break;
+        case 'bird':
+          greeting = `Tsirp tsirp, ${petName}! Lennä korkealle ja laula suloisesti.`;
+          break;
+        default:
+          greeting = `Hei, ${petName}! Olet ihana lemmikki.`;
+      }
+      setMessage(greeting);
+    } else {
+      setMessage('Täytä sekä nimi että tyyppi.');
+    }
   };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        
-        <div style={{ backgroundColor: 'white', padding: '10px' }}>
-        <Box sx={{ flexGrow: 1 }}>
+    <div className="center-container">
+      <h1>Elukantervehtimissovellus</h1>
       <Grid container spacing={2}>
-        <Grid item xs={8}>
-          <div style={{ backgroundColor: 'white', padding: '10px' }}>
+        <Grid item xs={6}>
           <TextField
-            id="outlined-basic"
-            label="Outlined"
+            label="Kirjoita lemmikkisi nimi"
             variant="outlined"
-            InputProps={{ style: { border: 'none' } }}
+            fullWidth
+            value={petName}
+            onChange={(e) => setPetName(e.target.value)}
           />
-          </div>
         </Grid>
-        <Grid item xs={4}>
-          <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
+        <Grid item xs={6}>
+          <FormControl variant="outlined" fullWidth>
+            <InputLabel>Valitse elukan tyyppi</InputLabel>
+            <Select
+              value={animalType}
+              onChange={(e) => setAnimalType(e.target.value)}
+              label="Valitse elukan tyyppi"
+            >
+              <MenuItem value="">Valitse elukan tyyppi</MenuItem>
+              <MenuItem value="dog">Koira</MenuItem>
+              <MenuItem value="cat">Kissa</MenuItem>
+              <MenuItem value="bird">Lintu</MenuItem>
+              {/* Add more options for other animal types */}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12}>
+          {/* Blank row */}
+        </Grid>
+        <Grid item xs={12}>
+          <Button variant="contained" color="primary" onClick={handleButtonClick} fullWidth>
+            Tervehdi elukkaa
+          </Button>
         </Grid>
       </Grid>
-    </Box>
-      </div>
-      </header>
-      
+      <p>{message}</p>
     </div>
   );
-}
+};
 
-export default App;
+export default PetGreeting;
