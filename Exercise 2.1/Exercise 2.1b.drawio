@@ -1,0 +1,19 @@
+<mxfile host="Electron" modified="2024-03-20T09:43:24.717Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="XAu7vBueZv8awv5mIO1Q" version="23.1.5" type="device">
+  <diagram name="Sivu-1" id="Txyi9VL9VdtQyzSFgE_K">
+    <mxGraphModel dx="1147" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YFkhQroQuRE1TdN5z8Cw-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="320" width="320" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="YFkhQroQuRE1TdN5z8Cw-3" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.android.navigation_bar_1_landscape;fillColor=#1A1A1A;strokeColor=#999999;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="680" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YFkhQroQuRE1TdN5z8Cw-6" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fillColor=#000000;strokeColor=#ffffff;fontColor=#ffffff;fontSize=10;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="129.91000000000003" y="320" width="320.087" height="15.825" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
